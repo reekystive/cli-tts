@@ -1,8 +1,8 @@
 # cli-tts
 
-Command Line Text-To-Speech using Google TTS
+Thanks to [gTTS](https://github.com/pndurette/gTTS) by [@pndurette](https://github.com/pndurette)!
 
-This is an interactive command line text-to-speech tool. Just enter text and the voice will be played.
+This is an interactive command line text-to-speech tool using Google TTS. Just type text and the voice will be played.
 
 Multi-language is supported.
 

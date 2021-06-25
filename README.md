@@ -24,7 +24,7 @@ $ python tts.py
 ### Windows
 
 There's a package that already included everything:
-[Win32 Release](https://github.com/) // TODO
+[Win32 Release](https://github.com/ReekyStive/cli-tts/releases/download/v1.1/google-tts-win32.7z)
 
 ## Screenshots
 

@@ -6,9 +6,20 @@ import sys
 
 temp = './temp/'
 
+print('Google TTS version 1.0 by ReekyStive')
+print('Type ":quit" to quit, type ":proxy" to set proxy.')
+print('Type anything to start.')
 
 while (True):
     s = input('> ')
+    if s.strip() == ':quit':
+        break
+    elif s.strip() == ':proxy':
+        server = input('HTTP Proxy server: ')
+        os.environ['http_proxy'] = server
+        os.environ['https_proxy'] = server
+        print('Proxy is set.\n')
+        continue
 
     print('Generating...', end='')
     sys.stdout.flush()
@@ -16,8 +27,17 @@ while (True):
         os.remove(temp + 'speech.mp3')
     except:
         pass
-    tts = gtts(s)
-    tts.save(temp + 'speech.mp3')
+    try:
+        tts = gtts(s)
+        tts.save(temp + 'speech.mp3')
+    except AssertionError:
+        print(' Nothing to generate.\n')
+        continue
+    except:
+        print(' Failed.')
+        print('Please check your connection with Google.')
+        print('Enter ":proxy" to set proxy.\n')
+        continue
 
     print(' Decoding...', end='')
     sys.stdout.flush()
